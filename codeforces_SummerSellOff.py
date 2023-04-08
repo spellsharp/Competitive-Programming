@@ -21,17 +21,16 @@ for i in range(n):
         sale = c[i]
     else:
         sale = p[i]
+    
+    profit = sale - abs(dump)
 
-    profit = sale - dump
-    print(f"index {i}", end=': ')
-    print(profit)
     if profit > 0:
         isSelloff = 1
         count += 1
     else:
         isSelloff = 0
 
-    if isSelloff and count <= f:
+    if isSelloff==1 and count <= f:
         sold.append(sale)
     else:
         if (p[i]/2) > c[i]:
